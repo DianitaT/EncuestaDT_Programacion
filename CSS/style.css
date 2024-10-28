@@ -1,0 +1,77 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(../IMG/pantallapro.png);
+    background-repeat: no-repeat; 
+    
+}
+
+.container {
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #b9218c;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff287b;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.programa {
+    margin-bottom: 20px;
+}
+
+input[type="number"],
+textarea,
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 2px solid #5f25ff;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #9c08ff;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #ff34ff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ff580a;
+    padding: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.resultados {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #5900ff;
+}
+
+.onlyresult {
+    background-color: rgb(0, 26, 255);
+}

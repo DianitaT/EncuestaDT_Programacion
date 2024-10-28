@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="IMG/perritobonito.jpg">
+    <title>Encuesta de Programacion</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="./Js/vue3.js"></script>
+</head>
+<body>
+    <div id="componente" class="container">
+        <h1>Encuesta de Programacion</h1>
+
+        <div class="programa">
+            <p>¿Te gusta la programacion?</p>
+            <label><input type="radio" v-model="legustaPro" value="Sí"> Sí</label>
+            <label><input type="radio" v-model="legustaPro" value="No"> No</label>
+        </div>
+
+        <!-- Si responde 'Sí', mostramos el resto de las preguntas -->
+        <div v-if="legustaPro === 'Sí'">
+            <div class="programa">
+                <p>¿Cuantos años llevas programando?</p>
+                <input type="number" v-model="edadPro" min="">
+            </div>
+
+            <div class="programa">
+                <p><strong>Cuéntanos sobre tu experiecia en la programacion:</strong></p>
+                <textarea v-model="expePro" placeholder=""></textarea>
+            </div>
+
+            <div class="programa">
+                <p>¿Cuantos lenguajes de programacion conoces? <br> Ingrese los lenguajes uno por uno:</p>
+                <input type="text" v-model="agregarPro" placeholder="">
+                <button @click="insertarPro">Agregar</button>
+                <ul>
+                    <li v-for="proMa in proMa">{{proMa}}</li>
+                </ul>
+            </div>
+
+            <button class="onlyresult" @click="resultadofinalPro">Mostrar resultados</button>
+
+            <div v-if="resultadoPro" class="resultados">
+                <h2>Resultados de la Encuesta:</h2>
+                <p><strong>¿Te gusta la programacion?:</strong> {{ legustaPro }}</p>
+                <p><strong>¿Cuantos años llevas programando?</strong> {{ edadPro }}</p>
+                <p><strong>Experiecia en la programacion:</strong> {{ expePro }}</p>
+                <p><strong>Lenguajes de programacion:</strong></p>
+                <ul>
+                    <li v-for="proMa in proMa">{{proMa}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Si responde 'No', mostramos un mensaje de agradecimiento -->
+        <div v-if="legustaPro === 'No'" class="programa">
+            <p>Gracias por tu participación.</p>
+        </div>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+</html>
